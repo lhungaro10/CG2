@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeção</title>
+    <link rel="stylesheet" href="./projection.css">
+</head>
+<body>
+    <div class="container-buttons">
+        <button onClick="location.href = '../index.html'" type="button">Voltar</button>
+        <button id="clear">Limpar</button>    
+    </div>
+    <div class="flex-container">
+        <canvas width="1000" height="600"></canvas>
+        <div class="painel">
+            <div class="projections-types font-style">
+                <p>Projeções</p>
+                <input type="radio" name="projections-types" id="cabinet" value="cabinet" checked>
+                <label for="cabinet" class="font-style">Cabinet</label>                
+                <input type="radio" name="projections-types" id="cavaleira" value="cavaleira">
+                <label for="cavaleira" class="font-style">Cavaleira</label>
+                <input type="radio" name="projections-types" id="ortogonal" value="ortogonal">
+                <label for="ortogonal" class="font-style">Ortogonal</label>
+            </div>
+            <div class="scale-container font-style">
+                <p>Escala</p>
+                <div class="local-container">
+                    <input type="radio" name="scale-types" id="local" value="local">
+                    <label for="local" class="font-style">Local</label>
+                    <input class="axios" id="local-x" type="number" name="x" placeholder="X" min="1" max="100" value="2"/>
+                    <input class="axios" id="local-y" type="number" name="y" placeholder="Y" min="1" max="100" value="3"/>
+                    <input class="axios" id="local-z" type="number" name="z" placeholder="Z" min="1" max="100" value="4"/>
+                </div>  
+                <div class="global-container">
+                    <input type="radio" name="scale-types" id="global" value="global" checked>
+                    <label for="global" class="font-style">Global</label>
+                    <input class="axios" id="global_input" type="number" name="global" min="1" max="100" value="0.5"/>
+                </div>     
+            </div>
+            <div class="translation-container font-style">
+                <p>Translação</p>
+                <input type="radio" name="translation" id="translation" value="translation">
+                <!-- <label for="translation" class="font-style">Local</label> -->
+                <input class="axios" id="translation-x" type="number" name="translation-x" placeholder="X" max="100" value="100"/>
+                <input class="axios" id="translation-y" type="number" name="translation-y" placeholder="Y" max="100" value="5"/>
+                <input class="axios" id="translation-z" type="number" name="translation-z" placeholder="Z" max="100" value="10"/>
+            </div>
+            <div class="rotation-container font-style">
+                <p>Rotação</p>
+                <input type="radio" name="rotation-types" id="rotation" value="origin">
+                <label for="origin" class="font-style">Origem</label>  
+                <input type="radio" name="rotation-types" id="rotation" value="center">
+                <label for="center" class="font-style">Centro do Objeto</label>
+                <br/><br/>
+                <label for="rotation-axios">Eixo:</label>
+                <select name="rotation-axios" id="rotation-axios">
+                  <option value="x">X</option>
+                  <option value="y">Y</option>
+                  <option value="z">Z</option>
+                </select> 
+                <label for="degree" class="font-style">Grau</label>
+                <input class="axios" id="degree" type="number" name="degree" max="100" value="0.2"/>                 
+            </div>
+            <div class="shearing-container font-style">
+                <p>Shearing</p>
+                <input type="radio" name="shearing" id="shearing" value="shearing">
+                <br/>
+                <input class="axios shearing" id="shearing-a1" type="number" name="shearing" placeholder="a1" max="100" value="1"/>
+                <input class="axios shearing" id="shearing-a2" type="number" name="shearing" placeholder="a2" max="100" value="-0.3"/>
+                <input class="axios shearing" id="shearing-a3" type="number" name="shearing" placeholder="a3" max="100" value="0.9"/>
+                <input class="axios shearing" id="shearing-a4" type="number" name="shearing" placeholder="a4" max="100" value="0"/>
+                <br/>
+                <input class="axios shearing" id="shearing-a5" type="number" name="shearing" placeholder="a5" max="100" value="1.3"/>
+                <input class="axios shearing" id="shearing-a6" type="number" name="shearing" placeholder="a6" max="100" value="1"/>
+                <input class="axios shearing" id="shearing-a7" type="number" name="shearing" placeholder="a7" max="100" value="-1.2"/>
+                <input class="axios shearing" id="shearing-a8" type="number" name="shearing" placeholder="a8" max="100" value="0"/>
+                <br/>
+                <input class="axios shearing" id="shearing-a9" type="number" name="shearing" placeholder="a9" max="100" value="2"/>
+                <input class="axios shearing" id="shearing-a10" type="number" name="shearing" placeholder="a10" max="100" value="2.1"/>
+                <input class="axios shearing" id="shearing-a11" type="number" name="shearing" placeholder="a11" max="100" value="1"/>
+                <input class="axios shearing" id="shearing-a12" type="number" name="shearing" placeholder="a12" max="100" value="0"/>   
+                <br/>
+                <input class="axios shearing" id="shearing-a13" type="number" name="shearing" placeholder="a13" max="100" value="0"/>
+                <input class="axios shearing" id="shearing-a14" type="number" name="shearing" placeholder="a14" max="100" value="0"/>
+                <input class="axios shearing" id="shearing-a15" type="number" name="shearing" placeholder="a15" max="100" value="0"/>
+                <input class="axios shearing" id="shearing-a16" type="number" name="shearing" placeholder="a16" max="100" value="1"/>             
+            </div>
+            <div class="run">
+                <button id="button-run" type="button">Executa</button>
+            </div>
+        </div>
+    </div>
+    <script src="./projection.js" type="module"></script>
+</body>
+</html>
